@@ -7,18 +7,30 @@
 </head>
 <body ng-controller="TextController">
 	
+	<input type="file" nv-file-select uploader="uploader"/><br/>
+	<ul>
+		<li ng-repeat="item in uploader.queue">
+			Name: <span ng-bind="item.file.name"></span><br/>
+			<button ng-click="item.upload()">upload</button>
+		</li>
+	</ul>
+	
+	
 	<!--<textarea id="inputor1"></textarea>-->
+	<input ng-model="predictionLimit" type="number" min="1" />
 	<textarea ng-model="contentText" id="inputor" data-ng-trim="false"></textarea>
-	hey there ! {{contentText}}
+	hey there ! {{predictionLimit}}  {{contentText}}
 	
 	
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/Caret.js/dist/jquery.caret.js"></script>
 	<script type="text/javascript" src="bower_components/At.js/dist/js/jquery.atwho.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="node_modules/es5-shim/ es5-shim.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript">		
+	<script type="text/javascript">
 	</script>
-	
+
 </body>
 </html>
