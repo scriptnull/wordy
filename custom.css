@@ -1,0 +1,20 @@
+.inputor {
+    height: 200px;
+    width: 100%;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    padding: 5px 8px;
+    outline: 0 none;
+    margin: 10px 0;
+    background: white;
+    font-size: inherit;
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #F9F9F9;
+}
+
+.center-me{
+    text-align: center;
+} 
