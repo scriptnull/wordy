@@ -29,3 +29,4 @@ cd path\to\wordy
 http-server
 ```
 
+In order to use server side text prediction , you have to first download and run the [scriptnull/wordy-backend](https://github.com/scriptnull/wordy-backend) project. Please refer to instructions about it on the project page.
