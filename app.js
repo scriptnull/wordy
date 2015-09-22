@@ -116,16 +116,20 @@ app.controller('TextController', ['$scope', 'utils', 'atJs', function ($scope, u
 			return;
 		}
 		var cursorPosition = $('#inputor').caret('pos');
-		console.log(content[cursorPosition - 1]);
-		if (content[cursorPosition - 1] == " " && content.length >= 3) {
+		if( content.charCodeAt(cursorPosition - 1) === 32 ){
 			var sub = content.substr(0, cursorPosition - 1);
-			var key = sub.split(' ').filter(function (val) {
+			sub = sub.split('\n');
+			var key = sub[sub.length - 1].split(' ').filter(function (val) {
 				return val != '';
 			}).pop();
-			var dataArr = content.split(' ').filter(function (val) {
+			var dataArr = content.split('\n').join(' ').split(' ').map(function(x){
+				return x.toString().trim();
+			}).filter(function (val) {
 				return val != '';
 			});
 			atJs.create('#inputor', getPredictions(key, dataArr), $scope.predictionLimit);
+		}else{
+			atJs.create('#inputor', [] , $scope.predictionLimit);
 		}
 	});
 

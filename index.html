@@ -16,7 +16,7 @@
 
 	<!--<input ng-model="predictionLimit" type="number" min="1" />-->
 	<div class="col-lg-8 col-lg-offset-2">
-		<textarea ng-model="contentText" id="inputor" class="inputor" data-ng-trim="false"></textarea>
+		<textarea ng-model="contentText" id="inputor" class="inputor" data-ng-keyup="keyUp($event)" data-ng-trim="false"></textarea>
 	</div>
 	<div class="col-lg-8 col-lg-offset-2 center-me" ng-hide="hideUploadButton">
 		<div  class="btn btn-primary btn-upload" upload-button url="http://localhost:1337/parse" 
